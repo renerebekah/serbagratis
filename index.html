@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ebook Gratis dengan Kode Akses</title>
+    <title>Ebook Gratis dan Berbayar</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f4f4f4;
             padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+        .section-title {
+            margin-top: 40px;
+            font-size: 24px;
+            color: #333;
         }
         .ebook-section {
             margin: 20px;
@@ -32,13 +42,9 @@
             border: none;
             cursor: pointer;
             margin-top: 20px;
-            display: none; /* Tersembunyi sampai kode benar */
         }
         .download-button:hover {
             background-color: #45a049;
-        }
-        .code-input {
-            margin: 10px 0;
         }
         .wa-button {
             background-color: #25D366;
@@ -54,19 +60,16 @@
         }
     </style>
     <script>
-        // Daftar kode akses yang valid
-        const validCodes = ['KODE123', 'KODE456', 'KODE789'];
-
-        function checkCode() {
-            const inputCode = document.getElementById('access-code').value;
-            const downloadButton = document.getElementById('download-button');
-
-            // Cek apakah kode yang dimasukkan ada dalam daftar kode valid
-            if (validCodes.includes(inputCode)) {
-                alert('Kode benar! Silakan download eBook.');
-                downloadButton.style.display = 'block'; // Tampilkan tombol download
+        // Fungsi untuk eBook Gratis
+        function handleDownloadClick(shopeeLink, downloadLink, button) {
+            if (!button.hasClicked) {
+                // Buka link Shopee di tab baru
+                window.open(shopeeLink, '_blank');
+                button.hasClicked = true; // Menandai tombol telah diklik
+                alert('Klik lagi untuk mendownload eBook.');
             } else {
-                alert('Kode salah. Coba lagi.');
+                // Redirect ke link download Google Drive
+                window.location.href = downloadLink;
             }
         }
     </script>
@@ -74,27 +77,41 @@
 <body>
 
 <header>
-    <h1>Selamat Datang di Website Ebook Gratis</h1>
-    <p>Masukkan kode akses yang kamu dapatkan untuk mendownload eBook.</p>
+    <h1>Selamat Datang di Website Ebook</h1>
+    <p>Temukan eBook gratis dan berbayar di sini!</p>
 </header>
 
-<section class="ebook-section">
-    <h2>Ebook Gratis 1</h2>
-    <img src="https://imgur.com/WmdT0Wr.jpg" alt="Ebook Cover" class="ebook-image">
-    <p>Judul: Ebook Orang Sukses<br>Penulis: RENEREBEKAH</p>
+<!-- Bagian eBook Gratis -->
+<h2 class="section-title">eBook Gratis</h2>
+<div id="ebook-gratis-list">
+    <!-- Contoh untuk Ebook Gratis 1 -->
+    <section class="ebook-section">
+        <h3>Ebook Gratis 1</h3>
+        <img src="https://imgur.com/WmdT0Wr.jpg" alt="Ebook Cover" class="ebook-image">
+        <p>Judul: Ebook Orang Sukses<br>Penulis: RENEREBEKAH</p>
+        <button class="download-button" onclick="handleDownloadClick('https://s.shopee.co.id/3q4FtNrz1l', 'https://drive.google.com/drive/folders/1EBmA7cetw7pmUS0iq2gSgQc2coc7f0MP?usp=sharing', this)">Download eBook</button>
+    </section>
 
-    <!-- Input untuk kode akses -->
-    <input type="text" id="access-code" class="code-input" placeholder="Masukkan kode akses">
-    <button onclick="checkCode()">Cek Kode</button>
+    <!-- Tambahkan lebih banyak ebook gratis di sini -->
+</div>
 
-    <!-- Tombol download, yang akan muncul hanya jika kode benar -->
-    <a href="https://drive.google.com/drive/folders/1EBmA7cetw7pmUS0iq2gSgQc2coc7f0MP?usp=sharing" target="_blank" id="download-button" class="download-button">Download eBook</a>
+<!-- Bagian eBook Berbayar -->
+<h2 class="section-title">eBook Berbayar</h2>
+<div id="ebook-berbayar-list">
+    <!-- Contoh untuk Ebook Berbayar 1 -->
+    <section class="ebook-section">
+        <h3>Ebook Berbayar 1</h3>
+        <img src="https://imgur.com/WmdT0Wr.jpg" alt="Ebook Cover" class="ebook-image">
+        <p>Judul: Ebook Eksklusif<br>Penulis: RENEREBEKAH</p>
+        
+        <!-- Tombol WhatsApp untuk mendapatkan kode akses -->
+        <a href="https://wa.me/6285777734511?text=Halo,%20saya%20ingin%20membeli%20eBook%20Eksklusif%20dan%20mendapatkan%20kode%20akses." target="_blank">
+            <button class="wa-button">Hubungi untuk Kode Akses</button>
+        </a>
+    </section>
 
-    <!-- Tombol untuk menghubungi melalui WhatsApp -->
-    <a href="https://wa.me/62YOURNUMBER?text=Halo,%20saya%20ingin%20mendapatkan%20kode%20akses%20untuk%20eBook." target="_blank">
-        <button class="wa-button">Hubungi via WhatsApp</button>
-    </a>
-</section>
+    <!-- Tambahkan lebih banyak ebook berbayar di sini -->
+</div>
 
 </body>
 </html>
