@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook Gratis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .ebook {
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .ebook-image {
+            width: 150px;
+            height: auto;
+        }
+        .download-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .download-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        var hasClicked = false;
+
+        function handleDownloadClick() {
+            if (!hasClicked) {
+                window.open('https://shopee.com', '_blank');
+                hasClicked = true;
+                alert('Klik lagi untuk mendownload file eBook.');
+            } else {
+                window.location.href = 'https://drive.google.com/link-download';
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Selamat Datang di Website Ebook Gratis</h1>
+    <p>Di sini kamu bisa mendownload berbagai eBook gratis hanya dengan sekali klik!</p>
+</header>
+
+<div class="container">
+    <!-- Daftar Ebook -->
+    <!-- Ulangi blok berikut sebanyak 50 kali, sesuaikan gambar dan link -->
+    <div class="ebook">
+        <img src="ebook-cover1.jpg" alt="Ebook Cover 1" class="ebook-image">
+        <p>Judul: Ebook Keren 1<br>Penulis: John Doe</p>
+        <a href="https://drive.google.com/link-download1" class="download-button" target="_blank">Download Ebook</a>
+    </div>
+    <div class="ebook">
+        <img src="ebook-cover2.jpg" alt="Ebook Cover 2" class="ebook-image">
+        <p>Judul: Ebook Keren 2<br>Penulis: John Doe</p>
+        <a href="https://drive.google.com/link-download2" class="download-button" target="_blank">Download Ebook</a>
+    </div>
+    <!-- Tambahkan hingga 50 ebook di sini -->
+</div>
+
+</body>
+</html>
