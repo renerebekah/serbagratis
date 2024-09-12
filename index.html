@@ -110,12 +110,8 @@
                 button.hasClicked = true;
                 alert('Klik lagi untuk mendownload eBook.');
             } else {
-                const code = prompt('Masukkan kode akses:');
-                if (code === 'YOUR_ACCESS_CODE') { // Ganti dengan kode yang sesuai
-                    window.location.href = downloadLink;
-                } else {
-                    alert('Kode akses salah.');
-                }
+                // Download langsung tanpa kode untuk ebook gratis
+                window.location.href = downloadLink;
             }
         }
 
@@ -146,7 +142,7 @@
     <section class="ebook-section">
         <h3>Ebook Gratis 1</h3>
         <img src="https://imgur.com/WmdT0Wr.jpg" alt="Ebook Cover" class="ebook-image">
-        <p>Judul: Ebook Orang Sukses<br>Penulis: RENEREBEKAH</p>
+        <p>Judul: Ebook Orang Sukses 1<br>Penulis: RENEREBEKAH</p>
         <button class="download-button" onclick="handleDownloadClick('https://s.shopee.co.id/3q4FtNrz1l', 'https://drive.google.com/drive/folders/1EBmA7cetw7pmUS0iq2gSgQc2coc7f0MP?usp=sharing', this)">Download eBook</button>
     </section>
     <!-- Tambahkan 19 ebook gratis lainnya dengan format yang sama -->
@@ -160,7 +156,7 @@
         <h3>Ebook Berbayar 1</h3>
         <img src="https://imgur.com/WmdT0Wr.jpg" alt="Ebook Cover" class="ebook-image">
         <p>Judul: Ebook Eksklusif 1<br>Penulis: RENEREBEKAH</p>
-        <a href="https://wa.me/62YOURNUMBER?text=Halo,%20saya%20ingin%20membeli%20eBook%20Eksklusif%201%20dan%20mendapatkan%20kode%20akses." target="_blank">
+        <a href="https://wa.me/085777734511?text=Halo,%20saya%20ingin%20membeli%20eBook%20Eksklusif%201%20dan%20mendapatkan%20kode%20akses." target="_blank">
             <button class="wa-button">Hubungi untuk Kode Akses</button>
         </a>
         <div class="code-form">
