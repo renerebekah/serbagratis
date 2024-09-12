@@ -90,52 +90,33 @@
         }
     </style>
     <script>
-        // Kode akses untuk ebook berbayar
-        const accessCodes = {
-            'ebook1': 'CODE1',
-            'ebook2': 'CODE2',
-            'ebook3': 'CODE3',
-            'ebook4': 'CODE4',
-            'ebook5': 'CODE5',
-            'ebook6': 'CODE6',
-            'ebook7': 'CODE7',
-            'ebook8': 'CODE8',
-            'ebook9': 'CODE9',
-            'ebook10': 'CODE10',
-            'ebook11': 'CODE11',
-            'ebook12': 'CODE12',
-            'ebook13': 'CODE13',
-            'ebook14': 'CODE14',
-            'ebook15': 'CODE15',
-            'ebook16': 'CODE16',
-            'ebook17': 'CODE17',
-            'ebook18': 'CODE18',
-            'ebook19': 'CODE19',
-            'ebook20': 'CODE20'
-        };
+    // Kode akses untuk ebook berbayar
+    const accessCodes = {
+        'ebook1': 'CODE1',
+        'ebook2': 'CODE2',
+        'ebook3': 'CODE3',
+        // Tambahkan kode akses untuk ebook lainnya sesuai kebutuhan
+    };
 
-        function handleDownloadClick(shopeeLink, downloadLink, button) {
-            if (!button.hasClicked) {
-                window.open(shopeeLink, '_blank');
-                button.hasClicked = true;
-                alert('Klik lagi untuk mendownload eBook.');
-            } else {
-                // Download langsung tanpa kode untuk ebook gratis
-                window.location.href = downloadLink;
-            }
-        }
+    // Link Google Drive untuk setiap ebook berbayar
+    const downloadLinks = {
+        'ebook1': 'https://drive.google.com/drive/folders/1GEyGtb7m8xD25QY_3hk4LfHKwleRS1cH?usp=sharing',
+        'ebook2': 'https://drive.google.com/drive/folders/1abcD45fgHIJklmnoPQRS?usp=sharing',
+        // Tambahkan link Google Drive untuk ebook lainnya sesuai kebutuhan
+    };
 
-        function validateCode(ebookId) {
-            const enteredCode = document.getElementById(`access-code-${ebookId}`).value;
-            const validCode = accessCodes[ebookId];
-            const downloadLink = `https://drive.google.com/drive/folders/${ebookId}`; // Ganti dengan link yang sesuai
-            
-            if (enteredCode === validCode) {
-                window.location.href = downloadLink;
-            } else {
-                alert('Kode akses salah.');
-            }
+    function validateCode(ebookId) {
+        const enteredCode = document.getElementById(`access-code-${ebookId}`).value;
+        const validCode = accessCodes[ebookId];
+        const downloadLink = downloadLinks[ebookId];
+        
+        if (enteredCode === validCode) {
+            window.location.href = downloadLink;
+        } else {
+            alert('Kode akses salah.');
         }
+    }
+</script>
 
         function searchEbooks() {
             const query = document.getElementById('search-query').value.toLowerCase();
@@ -223,18 +204,30 @@
 <h2 class="section-title">eBook Berbayar</h2>
 <div id="ebook-berbayar-list">
     <!-- Contoh untuk Ebook Berbayar (20 ebook) -->
+   <section class="ebook-section">
+    <h3> PAKET 4000JT DENGAN 1 VIDEO + BONUS</h3>
+    <img src="https://imgur.com/ym5p1Ep.jpg" alt="Ebook Cover" class="ebook-image">
+    <p>Judul: PAKET 4000JT DENGAN 1 VIDEO + BONUS<br>Penulis: RENEREBEKAH<br>Harga: Rp30.000</p>
+    <a href="https://wa.me/085777734511?text=Halo,%20saya%20ingin%20membeli%20eBook%20Eksklusif%201%20dan%20mendapatkan%20kode%20akses." target="_blank">
+        <button class="wa-button">Hubungi WA untuk Kode Akses</button>
+    </a>
+    <div class="code-form">
+        <input type="text" id="access-code-ebook1" placeholder="Masukkan kode akses">
+        <button onclick="validateCode('ebook1')">Verifikasi Kode</button>
+    </div>
+</section>
     <section class="ebook-section">
-        <h3>Ebook Berbayar 1</h3>
-        <img src="https://imgur.com/WmdT0Wr.jpg" alt="Ebook Cover" class="ebook-image">
-        <p>Judul: Ebook Eksklusif 1<br>Penulis: RENEREBEKAH<br>Harga: Rp30.000</p>
-        <a href="https://wa.me/085777734511?text=Halo,%20saya%20ingin%20membeli%20eBook%20Eksklusif%201%20dan%20mendapatkan%20kode%20akses." target="_blank">
-            <button class="wa-button">Hubungi WA untuk Kode Akses</button>
-        </a>
-        <div class="code-form">
-            <input type="text" id="access-code-ebook1" placeholder="Masukkan kode akses">
-            <button onclick="validateCode('ebook1')">Verifikasi Kode</button>
-        </div>
-    </section>
+    <h3>Ebook Berbayar 2</h3>
+    <img src="https://imgur.com/abcdEfG.jpg" alt="Ebook Cover" class="ebook-image">
+    <p>Judul: Ebook Eksklusif 2<br>Penulis: JANE DOE<br>Harga: Rp40.000</p>
+    <a href="https://wa.me/085777734512?text=Halo,%20saya%20ingin%20membeli%20eBook%20Eksklusif%202%20dan%20mendapatkan%20kode%20akses." target="_blank">
+        <button class="wa-button">Hubungi WA untuk Kode Akses</button>
+    </a>
+    <div class="code-form">
+        <input type="text" id="access-code-ebook2" placeholder="Masukkan kode akses">
+        <button onclick="validateCode('ebook2')">Verifikasi Kode</button>
+    </div>
+</section>
     <!-- Tambahkan 19 ebook berbayar lainnya dengan format yang sama -->
 </div>
 
