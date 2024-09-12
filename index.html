@@ -18,11 +18,14 @@
             padding: 20px;
             text-align: center;
         }
-        section {
+        .ebook-section {
             margin: 20px;
             padding: 20px;
             background-color: white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 300px;
+            vertical-align: top;
         }
         .ebook-image {
             width: 200px;
@@ -42,18 +45,17 @@
         }
     </style>
     <script>
-        // Flag untuk memantau apakah tombol sudah diklik sekali
-        var hasClicked = false;
-
-        function handleDownloadClick() {
-            if (!hasClicked) {
-                // Membuka halaman Shopee di tab baru pada klik pertama
-                window.open('https://shopee.com', '_blank');
-                hasClicked = true; // Menandai bahwa sudah pernah diklik
+        // Function to handle download clicks for each ebook
+        function handleDownloadClick(shopeeLink, downloadLink, button) {
+            // Check if the button has been clicked before
+            if (!button.hasClicked) {
+                // Open Shopee link in a new tab
+                window.open(shopeeLink, '_blank');
+                button.hasClicked = true; // Mark the button as clicked
                 alert('Klik lagi untuk mendownload file eBook.');
             } else {
-                // Arahkan ke link download pada klik kedua
-                window.location.href = 'https://drive.google.com/link-download';
+                // Redirect to download link
+                window.location.href = downloadLink;
             }
         }
     </script>
@@ -65,14 +67,27 @@
     <p>Di sini kamu bisa mendownload berbagai eBook gratis hanya dengan sekali klik!</p>
 </header>
 
-<section>
-    <h2>Ebook Gratis Pilihan Kami</h2>
-    <img src="ebook-cover.jpg" alt="Ebook Cover" class="ebook-image">
-    <p>Judul: Ebook Keren 101<br>Penulis: John Doe</p>
+<!-- Mulai dari sini, tambahkan banyak ebook -->
+<div id="ebook-list">
+    <!-- Contoh untuk Ebook 1 -->
+    <section class="ebook-section">
+        <h2>Ebook Gratis 1</h2>
+        <img src="https://drive.google.com/uc?id=YOUR_IMAGE_ID1" alt="Ebook Cover" class="ebook-image">
+        <p>Judul: Ebook Keren 1<br>Penulis: RENEREBEKAH</p>
+        <button class="download-button" onclick="handleDownloadClick('https://s.shopee.co.id/3q4FtNrz1l', 'https://drive.google.com/file/d/1ABCDE12345', this)">Download eBook</button>
+    </section>
 
-    <!-- Tombol download -->
-    <button class="download-button" onclick="handleDownloadClick()">Download eBook</button>
-</section>
+    <!-- Contoh untuk Ebook 2 -->
+    <section class="ebook-section">
+        <h2>Ebook Gratis 2</h2>
+        <img src="https://drive.google.com/uc?id=YOUR_IMAGE_ID2" alt="Ebook Cover" class="ebook-image">
+        <p>Judul: Ebook Keren 2<br>Penulis: RENEREBEKAH</p>
+        <button class="download-button" onclick="handleDownloadClick('https://s.shopee.co.id/3q4FtNrz1l', 'https://drive.google.com/file/d/2ABCDE12345', this)">Download eBook</button>
+    </section>
+
+    <!-- Tambahkan lebih banyak ebook di sini (3 hingga 50) dengan format yang sama -->
+
+</div>
 
 </body>
 </html>
